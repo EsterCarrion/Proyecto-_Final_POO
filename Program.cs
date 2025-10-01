@@ -10,7 +10,6 @@ namespace Proyecto_Final_POO
     {
         static void Main(string[] args)
         {
-  //ooo
         }
     }
 }
