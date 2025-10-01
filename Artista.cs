@@ -64,7 +64,7 @@ namespace Proyecto_Final_POO
             {
                 if (value < 0)
                 {
-                    Console.WriteLine("Error el número de seguidores no puede ser negativo.");
+                    Console.WriteLine("Error el número de seguidores no puede ser negativo."); //Valida que los seguidores no sean negativos
                     numeroSeguidores = 0;
                 }
                 else
@@ -76,19 +76,50 @@ namespace Proyecto_Final_POO
         public int OyentesMensuales
         {
             get { return this.oyentesMensuales; }
-            set { this.oyentesMensuales = value; }
+            set {
+                if (value < 0)
+                {
+                    Console.WriteLine("Error el número de oyentes mensuales no puede ser negativo."); //Valida que los oyentes no sean negativos
+                    this.oyentesMensuales = 0;
+                }
+                else
+                {
+                    this.oyentesMensuales = value;
+                }
+                }
         }
 
         public int NumeroAlbumes
         {
             get { return this.numeroAlbumes; }
-            set { this.numeroAlbumes = value; }
+            set {
+                if (value < 0)
+                {
+                    Console.WriteLine("Error el número de albumes no puede ser negativo."); //Valida que los albumes no sean negativos
+                    this.numeroAlbumes = 0;
+                }
+                else
+                {
+                    this.numeroAlbumes = value;
+                }
+                }
         }
 
         public int NumeroCanciones
         {
             get { return this.numeroCanciones; }
-            set { this.numeroAlbumes = value; }
+            set
+            {
+                if (value < 0)
+                {
+                    Console.WriteLine("Error el número de canciones no puede ser negativo."); //Valida que las canciones no sean negativas
+                    this.numeroCanciones = 0;
+                }
+                else
+                {
+                    this.numeroCanciones = value;
+                }
+            }
         }
 
         // 4. Implemenatar método para mostrar la información del artista
