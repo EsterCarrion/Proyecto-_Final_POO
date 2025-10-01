@@ -24,7 +24,7 @@ namespace Proyecto_Final_POO
 
         public Artista()
         {
-            this.nombreArtistico = "Sin nombre";
+            this.nombreArtistico = "Desconocido";
             this.generoMusical = "Sin género musical";
             this.numeroSeguidores = 0;
             this.oyentesMensuales = 0;
@@ -48,13 +48,33 @@ namespace Proyecto_Final_POO
         public string NombreArtistico
         {
             get { return this.nombreArtistico; }
-            set { this.nombreArtistico = value; }
+            set {
+                if (value == " " || value == null )
+                {
+                    Console.WriteLine("El nombre artístico no puede estar vacío, se le asignara: Desconocido "); //Validación de espacio o casilla vacía
+                    this.nombreArtistico = "Desconocido";
+                }
+                else
+                {
+                    this.nombreArtistico = value;
+                }
+                }
         }
 
         public string GeneroMusical
         {
             get { return this.generoMusical; }
-            set { this.generoMusical = value; }
+            set {
+                if (value == " " || value == null)
+                {
+                    Console.WriteLine("El genero musical no puede estar vacío, se le asignara: Sin género musical "); //Validación de espacio o casilla vacía
+                    this.generoMusical = "Sin género musical";
+                }
+                else
+                {
+                    this.generoMusical = value;
+                }
+                }
         }
 
         public int NumeroSeguidores
