@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Artista.cs" />
     <Compile Include="Fecha.cs" />
+    <Compile Include="Persona.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />
