@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,6 +33,13 @@ namespace Proyecto_Final_POO
             this.creador = new Usuario (sexo,nombre,apellido, new Fecha (dia,mes,año), nacionalidad,correo,contraseña, cuentaPremium);
             this.canciones = canciones;
         }
+        public Playlist(bool sexo, string nombre, string apellido, Fecha fnacimiento, List<Cancion> canciones, string nacionalidad, string correo, string contraseña,bool cuentaPremium)
+        {
+            this.nombrePlaylist = "Sin nombre";
+            this.creador = new Usuario (sexo, nombre, apellido, fnacimiento,nacionalidad,correo, contraseña,cuentaPremium );
+            this.canciones = canciones;
+        }
+            
 
         //Constructor vacio
         public Playlist()
@@ -103,7 +112,7 @@ namespace Proyecto_Final_POO
             {
                 Console.WriteLine("El playlist no existe");
             }
-            if (this.Canciones.Count == 0) 
+            else if (this.Canciones.Count == 0) 
             {
                 Console.WriteLine("El playlist etá vacío");
             }
@@ -112,7 +121,7 @@ namespace Proyecto_Final_POO
                 Console.WriteLine("----------" + this.NombrePlaylist + "----------");
                 foreach (Cancion c in this.Canciones)
                 {
-                    Console.WriteLine(c);
+                    c.mostrarInfo();
                 }
             }
         }
