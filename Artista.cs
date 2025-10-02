@@ -15,7 +15,7 @@ namespace Proyecto_Final_POO
         private string generoMusical;
         private int numeroSeguidores;
         private int numeroAlbumes;
-        private int numeroCanciones;
+        private List<Cancion> canciones;
 
         // 2. Constructores
 
@@ -27,18 +27,21 @@ namespace Proyecto_Final_POO
             this.generoMusical = "Sin género musical";
             this.numeroSeguidores = 0;
             this.numeroAlbumes = 0;
-            this.numeroCanciones = 0;
+            this.canciones = new List<Cancion>();
         }
 
         // 2.2. Constructor con parámetros
 
-        public Artista(string nombreArtistico, string generoMusical, int numeroSeguidores, int numeroAlbumes, int numeroCanciones, bool sexo, string nombre, string apellido, Fecha fnacimiento,string nacionalidad, string correo, string contraseña, bool cuentaPremium) : base(sexo, nombre, apellido, fnacimiento, nacionalidad, correo, contraseña, cuentaPremium)
+        public Artista(string nombreArtistico, string generoMusical, int numeroSeguidores, int numeroAlbumes, List<Cancion> canciones, bool sexo, string nombre, string apellido, Fecha fnacimiento,string nacionalidad, string correo, string contraseña, bool cuentaPremium) : base(sexo, nombre, apellido, fnacimiento, nacionalidad, correo, contraseña, cuentaPremium)
         {
             this.nombreArtistico = nombreArtistico;
             this.generoMusical = generoMusical;
             this.numeroSeguidores = numeroSeguidores;
             this.numeroAlbumes = numeroAlbumes;
-            this.numeroCanciones = numeroCanciones; // Lista de canciones
+            if (canciones != null)
+                this.canciones = canciones;
+            else
+                this.canciones = new List<Cancion>(); // inicializa vacía si se recibe null
         }
 
         // 3. Implementación métodos get y set 
@@ -107,19 +110,19 @@ namespace Proyecto_Final_POO
                 }
         }
 
-        public int NumeroCanciones
+        public List<Cancion> Canciones
         {
-            get { return this.numeroCanciones; }
+            get { return this.canciones; }
             set
             {
-                if (value < 0)
+                if (value == null)
                 {
-                    Console.WriteLine("Error el número de canciones no puede ser negativo."); //Valida que las canciones no sean negativas
-                    this.numeroCanciones = 0;
+                    Console.WriteLine("La lista de canciones no puede ser nula, se inicializa vacía"); //Valida que la lista de canciones no sea nula
+                    this.canciones = new List<Cancion>();
                 }
                 else
                 {
-                    this.numeroCanciones = value;
+                    this.canciones = value;
                 }
             }
         }
@@ -128,7 +131,20 @@ namespace Proyecto_Final_POO
 
         public void mostrarInfo()
         {
-            Console.WriteLine("Artista: " + this.nombreArtistico + " \nGénero musical: " + this.generoMusical + " \nNúmero de seguidores: " + this.numeroSeguidores + " seguidores\n " + "\nNúmero de albumes: " + this.numeroAlbumes + " \nNúmero de canciones: " + this.numeroCanciones);
+            Console.WriteLine("Artista: " + this.nombreArtistico + " \nGénero musical: " + this.generoMusical + " \nNúmero de seguidores: " + this.numeroSeguidores + " seguidores\n " + "\nNúmero de albumes: " + this.numeroAlbumes + " \nNúmero de canciones: " + this.canciones.Count);
+
+            if (this.canciones.Count > 0)
+            {
+                Console.WriteLine("Canciones: ");
+                for (int i = 0; i < this.canciones.Count; i++)
+                {
+                    Console.WriteLine("[" + (i + 1) +"]" + this.canciones[i].Titulo);
+                }
+            }
+            else
+            {
+                Console.WriteLine("No tiene canciones registradas");
+            }
         }
     }
 }
