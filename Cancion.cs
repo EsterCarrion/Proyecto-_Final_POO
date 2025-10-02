@@ -27,7 +27,7 @@ namespace Proyecto_Final_POO
             this.duracion = 0.00;
             this.genero = "Sin género";
             this.album = "Sin album";
-            this.flanzamiento = new Fecha(1,1,2000);
+            this.flanzamiento = new Fecha();
             this.nombreArtista = null;
         }
 

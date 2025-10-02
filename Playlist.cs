@@ -19,6 +19,12 @@ namespace Proyecto_Final_POO
             this.creador = creador;
             this.canciones = canciones;
         }
+        public Playlist(string nombrePlaylist, bool sexo, string nombre, string apellido, Fecha fnacimiento, string nacionalidad, string correo, string contraseña, bool cuentaPremium, List<Cancion> canciones)
+        {
+            this.nombrePlaylist = nombrePlaylist;
+            this.creador = new Usuario(sexo,nombre, apellido,fnacimiento,   nacionalidad,  correo);
+            this.canciones = canciones;
+        }
         //Constructor vacio
         public Playlist()
         {
