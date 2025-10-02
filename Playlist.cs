@@ -12,7 +12,7 @@ namespace Proyecto_Final_POO
         private Usuario creador;
         private List<Cancion> canciones;
 
-        //Constructore
+        //Constructor
         public Playlist (string nombrePlaylist, Usuario creador, List<Cancion> canciones)
         {
             this.nombrePlaylist = nombrePlaylist;

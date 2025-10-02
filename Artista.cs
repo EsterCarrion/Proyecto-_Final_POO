@@ -20,7 +20,7 @@ namespace Proyecto_Final_POO
 
         // 2. Constructores
 
-        //2.1. Constructor Vacio
+        // 2.1. Constructor Vacio
 
         public Artista() : base()
         {
@@ -39,9 +39,9 @@ namespace Proyecto_Final_POO
             this.nombreArtistico = nombreArtistico;
             this.generoMusical = generoMusical;
             this.numeroSeguidores = numeroSeguidores;
-            this.oyentesMensuales = oyentesMensuales;
+            this.oyentesMensuales = oyentesMensuales; // Clase canción o playlist
             this.numeroAlbumes = numeroAlbumes;
-            this.numeroCanciones = numeroCanciones;
+            this.numeroCanciones = numeroCanciones; // Lista de canciones
         }
 
         // 3. Implementación métodos get y set 
