@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Artista.cs" />
+    <Compile Include="Cancion.cs" />
     <Compile Include="Fecha.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Program.cs" />
