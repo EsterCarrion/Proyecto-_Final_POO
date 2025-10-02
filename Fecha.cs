@@ -16,17 +16,37 @@ namespace Proyecto_Final_POO
         public int Dia
         {
             get { return this.dia; }
-            set { this.dia = value; }
+            set
+            {
+                if (Validar(value, this.mes, this.año))
+                    this.dia = value;
+                else
+                    Console.WriteLine("Día inválido, no se modificó.");
+            }
         }
         public int Mes
         {
             get { return this.mes; }
-            set { this.mes = value; }
+            set 
+            {
+                if (Validar(this.dia, value, this.año))
+                    this.mes = value;
+                else
+                    Console.WriteLine("Mes inválido, no se modificó");
+            }
         }
         public int Año
         {
             get { return this.año; }
-            set { this.año = value; }
+            set 
+            { 
+                if (Validar(this.dia, this.mes, value))
+                    this.año = value;
+                else
+                    Console.WriteLine("Año inválido, no se modificó");
+                    
+                
+            }
         }
 
         //3 constructores //eso me dijo que estaba medio mal, no me acuerdo, creo que Cristian
@@ -210,12 +230,26 @@ namespace Proyecto_Final_POO
 
         }
         //Metodo que calcule la edad // si ya lo mejoro les muestro el lunes a mas tardar
-        public string CalcularEdad()
-        {
-            Fecha actual = new Fecha(DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year);
+        //public string CalcularEdad()
+        //{
+        //    Fecha actual = new Fecha(DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year);
 
-            int edad = actual.Año - this.Año;
-            return "Este año cumpliste o cumplirás " + edad + " años";
+        //    int edad = actual.Año - this.Año;
+        //    return "Este año cumpliste o cumplirás " + edad + " años";
+        //}
+
+        public int CalcularEdad()
+        {
+            DateTime hoy = DateTime.Now;
+
+            int edad = hoy.Year - this.Año;
+
+            if (hoy.Month < this.mes || (hoy.Month == this.mes && hoy.Day < this.dia))
+            {
+                edad--;
+            }
+
+            return edad;
+
         }
-    }
-}
+}   }
