@@ -13,17 +13,17 @@ namespace Proyecto_Final_POO
         private string nombre;
         private string apellido;
         private Fecha fnacimiento;
-        private string pais;
+        private string nacionalidad;
 
 
         
-        public Persona(bool sexo, string nombre, string apellido, Fecha fnacimiento, string pais)
+        public Persona(bool sexo, string nombre, string apellido, Fecha fnacimiento, string nacionalidad)
         {
             this.sexo = sexo;
             this.nombre = nombre;
             this.apellido = apellido;
             this.fnacimiento = fnacimiento;
-            this.pais = pais;
+            this.nacionalidad = nacionalidad;
         }
 
 
@@ -61,10 +61,10 @@ namespace Proyecto_Final_POO
             get { return fnacimiento; }
             set { fnacimiento = value; }
         }
-        public string Pais
+        public string Nacionalidad
         {
-            get { return this.pais; }
-            set { this.pais = value; }
+            get { return this.nacionalidad; }
+            set { this.nacionalidad = value; }
         }
         
         public override string ToString()
@@ -75,7 +75,7 @@ namespace Proyecto_Final_POO
                   "Sexo : " + this.Sexo + "\n"+
                   "Fecha de Nacimiento: " + this.Fnacimiento + "\n" +
                   "Edad: " + this.Fnacimiento.CalcularEdad() + "Años" + "\n"+
-                  "Pais de origen: " + this.Pais ;
+                  "Nacionalidad: " + this.Nacionalidad ;
         }
       
         public string CompararEdad(Persona p2)
