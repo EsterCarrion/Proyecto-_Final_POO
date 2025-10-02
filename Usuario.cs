@@ -6,24 +6,30 @@ using System.Threading.Tasks;
 
 namespace Proyecto_Final_POO
 {
-    internal class Usuario:Persona
+    internal class Usuario : Persona
     {
         private string correo;
         private string contraseña;
         private bool cuentaPremium;
 
-        public Usuario(bool sexo, string nombre, string apellido, Fecha fnacimiento, string pais,string correo  ,string contraseña,bool cuentaPremium)
-            : base (sexo,nombre, apellido,fnacimiento,pais)
+        public Usuario(bool sexo, string nombre, string apellido, Fecha fnacimiento, string nacionalidad,string correo  ,string contraseña,bool cuentaPremium)
+            : base (sexo,nombre, apellido,fnacimiento,nacionalidad)
         { 
 
 
             this.correo = correo;
             this.contraseña = contraseña;
-            this.cuentaPremium = cuentaPremium;
-            
-            
+            this.cuentaPremium = cuentaPremium;                
         }
- 
+
+        // 2.1 Constructor vacio
+        public Usuario() : base()
+        {
+            this.correo = "Unknown";
+            this.contraseña = "Unknown";
+            this.cuentaPremium = false;
+        }
+
         public string Correo
         {
             get { return this.correo; }
@@ -53,14 +59,14 @@ namespace Proyecto_Final_POO
                 return 
                 "Nombre y Apellido: " + this.Nombre + "  " + this.Apellido + "\n" +
                 "Edad : " + this.Fnacimiento.CalcularEdad() + " Años" + "\n" +
-                "Pais : " + this.Pais + "\n" +
+                "Pais : " + this.Nacionalidad + "\n" +
                  "Correo electónico : " + this.correo + "\n" +
                  "Cuenta Premium: NO";
             else 
                 return
                      "Nombre y Apellido: " + this.Nombre + "  " + this.Apellido + "\n" +
                 "Edad : " + this.Fnacimiento.CalcularEdad() + " Años" + "\n" +
-                "Pais : " + this.Pais + "\n" +
+                "Pais : " + this.Nacionalidad + "\n" +
                  "Correo electónico : " + this.correo + "\n" +
                  "Cuenta Premium: SI";
 

@@ -26,35 +26,58 @@ namespace Proyecto_Final_POO
             this.nacionalidad = nacionalidad;
         }
 
-
         public Persona(bool sexo, Fecha fnacimiento)
         {
             this.sexo = sexo;
             this.nombre = "Sin nombre";
             this.apellido = "Sin Apellido";
             this.fnacimiento = fnacimiento;
+            this.nacionalidad = "Sin nacionalidad";
         }
+
+        // 2.1 Constructor vacio
         public Persona()
         {
             this.sexo = true;
             this.nombre = "Sin Nombre";
             this.apellido = "Sin Apellido";
             this.fnacimiento = new Fecha(1, 1, 2000);
+            this.nacionalidad = "Sin nacionalidad";
         }
         public bool Sexo
         {
-            get { return sexo; }
-            set { sexo = value; }
+            get { return this.sexo; }
+            set { this.sexo = value; }
         }
         public string Nombre
         {
-            get { return nombre; }
-            set { nombre = value; }
+            get { return this.nombre; }
+            set {
+                if (value == " " || value == null)
+                {
+                    Console.WriteLine("El nombre no puede estar vacío, se le asignara: Sin nombre "); //Validación de espacio o casilla vacía
+                    this.nombre = "Sin nombre";
+                }
+                else
+                {
+                    this.nombre = value; 
+                }
+                }
         }
         public string Apellido
         {
-            get { return apellido; }
-            set { apellido = value; }
+            get { return this.apellido; }
+            set {
+                if (value == " " || value == null)
+                {
+                    Console.WriteLine("El apellido no puede estar vacío, se le asignara: Sin apellido "); //Validación de espacio o casilla vacía
+                    this.apellido = "Sin apellido";
+                }
+                else
+                {
+                    this.apellido = value; 
+                }
+                }
         }
         public Fecha Fnacimiento
         {
@@ -64,7 +87,17 @@ namespace Proyecto_Final_POO
         public string Nacionalidad
         {
             get { return this.nacionalidad; }
-            set { this.nacionalidad = value; }
+            set {
+                if (value == " " || value == null)
+                {
+                    Console.WriteLine("La nacionalidad no puede estar vacío, se le asignara: Sin nacionalidad "); //Validación de espacio o casilla vacía
+                    this.apellido = "Sin nacionalidad";
+                }
+                else
+                {
+                    this.nacionalidad = value; ;
+                }
+                }
         }
         
         public override string ToString()
@@ -75,56 +108,7 @@ namespace Proyecto_Final_POO
                   "Sexo : " + this.Sexo + "\n"+
                   "Fecha de Nacimiento: " + this.Fnacimiento + "\n" +
                   "Edad: " + this.Fnacimiento.CalcularEdad() + "Años" + "\n"+
-                  "Nacionalidad: " + this.Nacionalidad ;
-        }
-      
-        public string CompararEdad(Persona p2)
-        {
-            if (this.Fnacimiento.Año < p2.Fnacimiento.Año)
-            {
-                return this.Nombre + " es mayor.";
-            }
-            else if (this.Fnacimiento.Año > p2.Fnacimiento.Año)
-            {
-                return this.Nombre + " es menor.";
-            }
-            else
-            {
-                if (this.Fnacimiento.Mes < p2.Fnacimiento.Mes)
-                {
-                    return this.Nombre + " es mayor.";
-                }
-                else if (this.Fnacimiento.Mes > p2.Fnacimiento.Mes)
-                {
-                    return this.Nombre + " es menor.";
-                }
-                else
-                {
-                    if (this.Fnacimiento.Dia < p2.Fnacimiento.Dia)
-                    {
-                        return this.Nombre + " es mayor.";
-                    }
-                    else if (this.Fnacimiento.Dia > p2.Fnacimiento.Dia)
-                    {
-                        return this.Nombre + " es menor.";
-                    }
-                    else return this.Nombre + " y " + p2.Nombre + " tienen la misma edad";
-                }
-            }
-
-        }
-       
-        public string ActualizarNombre(string nombre)
-        {
-            return this.Nombre = nombre;
-        }
-        public string ActualizarApellido(string apellido)
-        {
-            return this.Apellido = apellido;
-        }
-        public Fecha ActualizarFecha(Fecha fecha)
-        {
-            return this.Fnacimiento = fecha;
+                  "Nacionalidad: " + this.nacionalidad ;
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto_Final_POO
 {
-    internal class Artista
+    internal class Artista : Usuario
     {
         // 1. Atributos necesarios
 
@@ -22,7 +22,7 @@ namespace Proyecto_Final_POO
 
         //2.1. Constructor Vacio
 
-        public Artista()
+        public Artista() : base()
         {
             this.nombreArtistico = "Desconocido";
             this.generoMusical = "Sin género musical";
@@ -34,7 +34,7 @@ namespace Proyecto_Final_POO
 
         // 2.2. Constructor con parámetros
 
-        public Artista(string nombreArtistico, string generoMusical, int numeroSeguidores, int oyentesMensuales, int numeroAlbumes, int numeroCanciones)
+        public Artista(string nombreArtistico, string generoMusical, int numeroSeguidores, int oyentesMensuales, int numeroAlbumes, int numeroCanciones, bool sexo, string nombre, string apellido, Fecha fnacimiento,string nacionalidad, string correo, string contraseña, bool cuentaPremium) : base(sexo, nombre, apellido, fnacimiento, nacionalidad, correo, contraseña, cuentaPremium)
         {
             this.nombreArtistico = nombreArtistico;
             this.generoMusical = generoMusical;
