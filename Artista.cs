@@ -14,7 +14,6 @@ namespace Proyecto_Final_POO
         private string nombreArtistico;
         private string generoMusical;
         private int numeroSeguidores;
-        private int oyentesMensuales;
         private int numeroAlbumes;
         private int numeroCanciones;
 
@@ -27,19 +26,17 @@ namespace Proyecto_Final_POO
             this.nombreArtistico = "Desconocido";
             this.generoMusical = "Sin género musical";
             this.numeroSeguidores = 0;
-            this.oyentesMensuales = 0;
             this.numeroAlbumes = 0;
             this.numeroCanciones = 0;
         }
 
         // 2.2. Constructor con parámetros
 
-        public Artista(string nombreArtistico, string generoMusical, int numeroSeguidores, int oyentesMensuales, int numeroAlbumes, int numeroCanciones, bool sexo, string nombre, string apellido, Fecha fnacimiento,string nacionalidad, string correo, string contraseña, bool cuentaPremium) : base(sexo, nombre, apellido, fnacimiento, nacionalidad, correo, contraseña, cuentaPremium)
+        public Artista(string nombreArtistico, string generoMusical, int numeroSeguidores, int numeroAlbumes, int numeroCanciones, bool sexo, string nombre, string apellido, Fecha fnacimiento,string nacionalidad, string correo, string contraseña, bool cuentaPremium) : base(sexo, nombre, apellido, fnacimiento, nacionalidad, correo, contraseña, cuentaPremium)
         {
             this.nombreArtistico = nombreArtistico;
             this.generoMusical = generoMusical;
             this.numeroSeguidores = numeroSeguidores;
-            this.oyentesMensuales = oyentesMensuales; // Clase canción o playlist
             this.numeroAlbumes = numeroAlbumes;
             this.numeroCanciones = numeroCanciones; // Lista de canciones
         }
@@ -93,21 +90,6 @@ namespace Proyecto_Final_POO
                 }
             }
         }
-        public int OyentesMensuales
-        {
-            get { return this.oyentesMensuales; }
-            set {
-                if (value < 0)
-                {
-                    Console.WriteLine("Error el número de oyentes mensuales no puede ser negativo."); //Valida que los oyentes no sean negativos
-                    this.oyentesMensuales = 0;
-                }
-                else
-                {
-                    this.oyentesMensuales = value;
-                }
-                }
-        }
 
         public int NumeroAlbumes
         {
@@ -146,7 +128,7 @@ namespace Proyecto_Final_POO
 
         public void mostrarInfo()
         {
-            Console.WriteLine("Artista: " + this.nombreArtistico + " \nGénero musical: " + this.generoMusical + " \nNúmero de seguidores: " + this.numeroSeguidores + " seguidores\n " + " \nOyentes mensuales: " + this.oyentesMensuales + "\nNúmero de albumes: " + this.numeroAlbumes + " \nNúmero de canciones: " + this.numeroCanciones);
+            Console.WriteLine("Artista: " + this.nombreArtistico + " \nGénero musical: " + this.generoMusical + " \nNúmero de seguidores: " + this.numeroSeguidores + " seguidores\n " + "\nNúmero de albumes: " + this.numeroAlbumes + " \nNúmero de canciones: " + this.numeroCanciones);
         }
     }
 }

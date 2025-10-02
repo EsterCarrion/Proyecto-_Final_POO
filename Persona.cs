@@ -41,7 +41,7 @@ namespace Proyecto_Final_POO
             this.sexo = true;
             this.nombre = "Sin Nombre";
             this.apellido = "Sin Apellido";
-            this.fnacimiento = new Fecha(1, 1, 2000);
+            this.fnacimiento = new Fecha();
             this.nacionalidad = "Sin nacionalidad";
         }
         public bool Sexo
