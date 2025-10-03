@@ -130,7 +130,7 @@ namespace Proyecto_Final_POO
         }
         public override string ToString()
         {
-            return MostrarFecha() + " - " + MostrarBisiesto();
+            return MostrarFecha();
         }
         // Método para aumentar y disminuir un dia en la fecha //
         public void AumentarDia()

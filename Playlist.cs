@@ -60,7 +60,7 @@ namespace Proyecto_Final_POO
         }
         public List<Cancion> Canciones
         {
-            get { return this.Canciones;}
+            get { return this.canciones;}
         }
         //Método para agregar canciones
         public List<Cancion> AgregarCancion(Cancion cancion,Usuario usuario)

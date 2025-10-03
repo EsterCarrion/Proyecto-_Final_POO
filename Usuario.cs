@@ -16,12 +16,11 @@ namespace Proyecto_Final_POO
             : base (sexo,nombre, apellido,fnacimiento,nacionalidad)
         { 
 
-
             this.correo = correo;
             this.contraseña = contraseña;
             this.cuentaPremium = cuentaPremium;                
         }
-
+       
         // 2.1 Constructor vacio
         public Usuario() : base()
         {

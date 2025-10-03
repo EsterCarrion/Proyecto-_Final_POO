@@ -138,6 +138,7 @@ namespace Proyecto_Final_POO
         public void mostrarInfo()
         {
             Console.WriteLine("Titulo: " + this.titulo + "\nDuración: " + this.duracion +"\nGénero: " + this.genero + "\nAlbum: " + this.album + "\nFecha de lanzamiento: " + this.flanzamiento + "\nNombre del Artista: " + this.nombreArtista.NombreArtistico);
+            Console.WriteLine();
         }
     }
 }
