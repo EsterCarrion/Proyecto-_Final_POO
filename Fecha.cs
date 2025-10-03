@@ -19,9 +19,13 @@ namespace Proyecto_Final_POO
             set
             {
                 if (Validar(value, this.mes, this.año))
+                {
                     this.dia = value;
+                }
                 else
+                {
                     Console.WriteLine("Día inválido, no se modificó.");
+                }
             }
         }
         public int Mes
@@ -30,9 +34,14 @@ namespace Proyecto_Final_POO
             set 
             {
                 if (Validar(this.dia, value, this.año))
+                {
                     this.mes = value;
+                }      
                 else
+                {
                     Console.WriteLine("Mes inválido, no se modificó");
+                }
+                    
             }
         }
         public int Año
@@ -41,11 +50,13 @@ namespace Proyecto_Final_POO
             set 
             { 
                 if (Validar(this.dia, this.mes, value))
+                {
                     this.año = value;
+                }                    
                 else
+                {
                     Console.WriteLine("Año inválido, no se modificó");
-                    
-                
+                }              
             }
         }
 
@@ -229,14 +240,6 @@ namespace Proyecto_Final_POO
             }
 
         }
-        //Metodo que calcule la edad // si ya lo mejoro les muestro el lunes a mas tardar
-        //public string CalcularEdad()
-        //{
-        //    Fecha actual = new Fecha(DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year);
-
-        //    int edad = actual.Año - this.Año;
-        //    return "Este año cumpliste o cumplirás " + edad + " años";
-        //}
 
         public int CalcularEdad()
         {

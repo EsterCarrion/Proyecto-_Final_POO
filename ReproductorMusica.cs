@@ -182,16 +182,17 @@ namespace Proyecto_Final_POO
         }
 
         // E 3.5. Método para mostrar la canción actual y su artista
-        public void mostrarcancionActual()
+        public Cancion mostrarcancionActual()
         {
             if (playlistActual.Canciones.Count == 0)
             {
                 Console.WriteLine("No hay canciones en la playlist");
-                return;
+                return null;
             }
 
             Cancion actual = playlistActual.Canciones[indiceActual];
-            Console.WriteLine("Canción actual: " + actual.Titulo + " - " + actual.NombreArtista + " | Estado: " + this.estado);
+            Console.WriteLine("Canción actual: " + actual.Titulo + " - " + actual.NombreArtista.NombreArtistico + " | Estado: " + this.estado);
+            return actual;
         }
     }
 }
